@@ -10,7 +10,7 @@ export default ({
 	x = 0,
 	y = 0,
 	z = 0,
-	width = 1.1,
+	width = 5.1,
 	breadth = 1.1,
 	height = 1.1,
 	scale = 1,
@@ -28,7 +28,7 @@ export default ({
 	box.scale.z = scale;
 
 	add(parent, box);
-	
+
 	const crash = sound(CrashFile, 16 * 40);
 
 	return {
