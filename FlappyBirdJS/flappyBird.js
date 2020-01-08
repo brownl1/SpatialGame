@@ -11,7 +11,7 @@ var pipeSouth = new Image();
 
 bat.src = "images/bat4.png";
 bg.src = "images/cave2.png";
-fg.src = "images/foreground1.png";
+fg.src = "images/fg2.png";
 pipeNorth.src = "images/pipeNorth.png";
 pipeSouth.src = "images/pipeSouth.png";
 
