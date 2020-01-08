@@ -95,7 +95,8 @@ function draw(){
 
         pipe[i].x--;
 
-        if( pipe[i].x == 125 ){
+        if( pipe[i].x == 500 ){ //change this number to change speed of the pipes
+                                //a new one will be drawn after the current one hits this pixel amt. in the x direction
             pipe.push({
                 x : cvs.width,
                 y : Math.floor(Math.random()*pipeNorth.height)-pipeNorth.height
@@ -122,7 +123,7 @@ function draw(){
 
     bY += gravity; //make it zero for no gravity ?
 
-    ctx.fillStyle = "#000";
+    ctx.fillStyle = "#32cd32";
     ctx.font = "20px Verdana";
     ctx.fillText("Score : "+score,10,cvs.height-20);
 
