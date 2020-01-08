@@ -3,13 +3,13 @@ var ctx = cvs.getContext("2d");
 
 // load images
 
-var bird = new Image();
+var bat = new Image();
 var bg = new Image();
 var fg = new Image();
 var pipeNorth = new Image();
 var pipeSouth = new Image();
 
-bird.src = "images/bird.png";
+bat.src = "images/bat4.png";
 bg.src = "images/cave2.png";
 fg.src = "images/foreground1.png";
 pipeNorth.src = "images/pipeNorth.png";
@@ -18,7 +18,7 @@ pipeSouth.src = "images/pipeSouth.png";
 
 // some variables
 
-var gap = 75;
+var gap = 100;
 var constant;
 
 var bX = 10;
@@ -104,7 +104,7 @@ function draw(){
 
         // detect collision
 
-        if( bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bird.height >= pipe[i].y+constant) || bY + bird.height >=  cvs.height - fg.height){
+        if( bX + bat.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bat.height >= pipe[i].y+constant) || bY + bat.height >=  cvs.height - fg.height){
             location.reload(); // reload the page
         }
 
@@ -118,7 +118,7 @@ function draw(){
 
     ctx.drawImage(fg,0,cvs.height - fg.height);
 
-    ctx.drawImage(bird,bX,bY);
+    ctx.drawImage(bat,bX,bY);
 
     bY += gravity; //make it zero for no gravity ?
 
