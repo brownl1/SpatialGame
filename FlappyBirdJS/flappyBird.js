@@ -11,14 +11,14 @@ var pipeSouth = new Image();
 
 bat.src = "images/bat4.png";
 bg.src = "images/cave2.png";
-fg.src = "images/foreground1.png";
+fg.src = "images/fg2.png";
 pipeNorth.src = "images/pipeNorth.png";
 pipeSouth.src = "images/pipeSouth.png";
 
 
 // some variables
 
-var gap = 100;
+var gap = 120;
 var constant;
 
 var bX = 10;
@@ -36,7 +36,41 @@ var scor = new Audio();
 fly.src = "sounds/fly.mp3";
 scor.src = "sounds/score.mp3";
 
+var buttonpress = 4
 // on key down
+
+var up1 = document.getElementById('up1');
+up1.style.height = '25px';
+up1.style.width= '25px';
+
+var up2 = document.getElementById('up2');
+up2.style.height = '50px';
+up2.style.width= '25px';
+
+var up3 = document.getElementById('up3');
+up3.style.height = '75px';
+up3.style.width= '25px';
+
+var up4 = document.getElementById('up4');
+up4.style.height = '100px';
+up4.style.width= '25px';
+
+var down1 = document.getElementById('down1');
+down1.style.height = '25px';
+down1.style.width= '25px';
+
+var down2 = document.getElementById('down2');
+down2.style.height = '50px';
+down2.style.width= '25px';
+
+var down3 = document.getElementById('down3');
+down3.style.height = '75px';
+down3.style.width= '25px';
+
+var down4 = document.getElementById('down4');
+down4.style.height = '100px';
+down4.style.width= '25px';
+
 
 // document.addEventListener("keydown",moveUp);
 // document.addEventListener("keydown",moveDown);
@@ -48,27 +82,28 @@ document.onkeydown = function(e) {
             break;
         case 38:
             // alert('up');
-            moveUp();
+            moveUp(1);
             break;
         case 39:
             // alert('right');
             break;
         case 40:
             // alert('down');
-            moveDown()
+            moveDown(1);
             break;
     }
 };
 
-function moveUp(){
-    bY -= 25;
+function moveUp(times){
+    bY -= (25*times);
+    buttonpress--;
     fly.play();
 }
 
-function moveDown(){
-  bY += 25;
-  fly.play()
-
+function moveDown(times){
+  bY += (25*times);
+  buttonpress--;
+  fly.play();
 }
 
 // pipe coordinates
@@ -93,9 +128,34 @@ function draw(){
         ctx.drawImage(pipeNorth,pipe[i].x,pipe[i].y);
         ctx.drawImage(pipeSouth,pipe[i].x,pipe[i].y+constant); //constant is North pipe height plus gap
 
-        pipe[i].x--;
+        if (buttonpress<0){
+          alert("Too many button presses. Try again next time");
+          location.reload();
 
-        if( pipe[i].x == 500 ){ //change this number to change speed of the pipes
+        if (pipe[i].x <= 10) {
+
+          }
+        }
+
+
+
+        if (pipe[0].x > 150) {
+          pipe[i].x--;
+        }
+        else {
+          if( (bY <= pipe[0].y + pipeNorth.height || bY+bat.height >= pipe[0].y+constant) || bY + bat.height >=  cvs.height - fg.height){
+            }
+          else {
+            pipe[i].x--;
+          }
+        }
+
+        if (pipe[i].x <= -60) {
+          pipe.shift();
+        }
+
+
+        if( pipe[i].x == 250 ){ //change this number to change speed of the pipes
                                 //a new one will be drawn after the current one hits this pixel amt. in the x direction
             pipe.push({
                 x : cvs.width,
@@ -105,13 +165,14 @@ function draw(){
 
         // detect collision
 
-        if( bX + bat.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bat.height >= pipe[i].y+constant) || bY + bat.height >=  cvs.height - fg.height){
-            location.reload(); // reload the page
-        }
+        // if( bX + bat.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bat.height >= pipe[i].y+constant) || bY + bat.height >=  cvs.height - fg.height){
+        //     location.reload(); // reload the page
+        // }
 
         if(pipe[i].x == 5){
             score++;
             scor.play();
+            buttonpress = 4;
         }
 
 
