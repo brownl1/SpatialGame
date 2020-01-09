@@ -36,39 +36,39 @@ var scor = new Audio();
 fly.src = "sounds/fly.mp3";
 scor.src = "sounds/score.mp3";
 
-var buttonpress = 4
+var buttonpress = 2
 // on key down
 
 var up1 = document.getElementById('up1');
-up1.style.height = '25px';
+up1.style.height = '50px';
 up1.style.width= '25px';
 
 var up2 = document.getElementById('up2');
-up2.style.height = '50px';
+up2.style.height = '100px';
 up2.style.width= '25px';
 
 var up3 = document.getElementById('up3');
-up3.style.height = '75px';
+up3.style.height = '150px';
 up3.style.width= '25px';
 
 var up4 = document.getElementById('up4');
-up4.style.height = '100px';
+up4.style.height = '200px';
 up4.style.width= '25px';
 
 var down1 = document.getElementById('down1');
-down1.style.height = '25px';
+down1.style.height = '50px';
 down1.style.width= '25px';
 
 var down2 = document.getElementById('down2');
-down2.style.height = '50px';
+down2.style.height = '100px';
 down2.style.width= '25px';
 
 var down3 = document.getElementById('down3');
-down3.style.height = '75px';
+down3.style.height = '150px';
 down3.style.width= '25px';
 
 var down4 = document.getElementById('down4');
-down4.style.height = '100px';
+down4.style.height = '200px';
 down4.style.width= '25px';
 
 
@@ -172,7 +172,7 @@ function draw(){
         if(pipe[i].x == 5){
             score++;
             scor.play();
-            buttonpress = 4;
+            buttonpress = 2;
         }
 
 
