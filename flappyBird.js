@@ -130,6 +130,7 @@ function draw(){
 
         if (buttonpress<0){
           alert("Too many button presses. Try again next time");
+          buttonpress = 2;
           location.reload();
 
         if (pipe[i].x <= 10) {
