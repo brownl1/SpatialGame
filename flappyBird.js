@@ -141,13 +141,13 @@ function draw(){
 
 
         if (pipe[0].x > 150) {
-          pipe[i].x--;
+          pipe[i].x-=5;
         }
         else {
           if( (bY <= pipe[0].y + pipeNorth.height || bY+bat.height >= pipe[0].y+constant) || bY + bat.height >=  cvs.height - fg.height){
             }
           else {
-            pipe[i].x--;
+            pipe[i].x-=5;
           }
         }
 
@@ -156,7 +156,7 @@ function draw(){
         }
 
 
-        if( pipe[i].x == 250 ){ //change this number to change speed of the pipes
+        if( pipe[i].x == 300 ){ //change this number to change speed of the pipes
                                 //a new one will be drawn after the current one hits this pixel amt. in the x direction
             pipe.push({
                 x : cvs.width,
