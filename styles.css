@@ -13,3 +13,21 @@
     display: inline-block;
     vertical-align: middle; /* align the text vertically centered */
 }
+
+h3 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+}
+
+.NavButton {
+  background-color: #4e4f52;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  border: none;           /* assuming we don't want any borders */
+  cursor: pointer;        /* make the cursor like hovering over an <a> element */        /* make this the size of your image */
+  padding: 20px 20px;
+  display: inline-block;
+  vertical-align: middle; /* align the text vertically centered */
+}
