@@ -1,10 +1,15 @@
 .button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+    background-image: url('images/bat4.png'); /* 16px x 16px */
+    background-color: #4e4f52;
+    background-repeat: no-repeat;  /* make the background image appear only once */
+    background-position: 0px 0px;  /* equivalent to 'top left' */
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    border: none;           /* assuming we don't want any borders */
+    cursor: pointer;        /* make the cursor like hovering over an <a> element */
+    height: 100px;           /* make this the size of your image */
+    padding: 100px 100px;
+    display: inline-block;
+    vertical-align: middle; /* align the text vertically centered */
 }
