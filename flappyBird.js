@@ -109,6 +109,7 @@ function draw(){
 
     ctx.drawImage(bg,0,0);
 
+
     for(var i = 0; i < pipe.length; i++){
 
         constant = pipeNorth.height+gap;
@@ -119,10 +120,6 @@ function draw(){
           alert("Too many button presses. Try again next time");
           buttonpress = 2;
           location.reload();
-
-        if (pipe[i].x <= 10) {
-
-          }
         }
 
 
@@ -151,19 +148,11 @@ function draw(){
             });
         }
 
-        // detect collision
-
-        // if( bX + bat.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bat.height >= pipe[i].y+constant) || bY + bat.height >=  cvs.height - fg.height){
-        //     location.reload(); // reload the page
-        // }
-
         if(pipe[i].x == 5){
             score++;
             scor.play();
             buttonpress = 2;
         }
-
-
     }
 
     ctx.drawImage(fg,0,cvs.height - fg.height);
