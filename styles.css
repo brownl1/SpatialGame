@@ -21,13 +21,25 @@ h3 {
 }
 
 .NavButton {
-  background-color: #4e4f52;
+  background-color: #B841B9;
   color: white;
   font-size: 20px;
   text-align: center;
-  border: none;           /* assuming we don't want any borders */
+  border-color: #20255F;
   cursor: pointer;        /* make the cursor like hovering over an <a> element */        /* make this the size of your image */
   padding: 20px 20px;
+  display: inline-block;
+  vertical-align: middle; /* align the text vertically centered */
+}
+
+.arrows {
+  background-color: #B841B9;
+  color: white;
+  font-size: 20px;
+  width: 50px;
+  text-align: center;
+  border-color: #20255F;
+  cursor: pointer;        /* make the cursor like hovering over an <a> element */        /* make this the size of your image */
   display: inline-block;
   vertical-align: middle; /* align the text vertically centered */
 }

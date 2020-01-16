@@ -41,39 +41,27 @@ var buttonpress = 2
 
 var up1 = document.getElementById('up1');
 up1.style.height = '50px';
-up1.style.width= '50px';
 
 var up2 = document.getElementById('up2');
 up2.style.height = '100px';
-up2.style.width= '50px';
 
 var up3 = document.getElementById('up3');
 up3.style.height = '150px';
-up3.style.width= '50px';
 
 var up4 = document.getElementById('up4');
 up4.style.height = '200px';
-up4.style.width= '50px';
 
 var down1 = document.getElementById('down1');
 down1.style.height = '50px';
-down1.style.width= '50px';
 
 var down2 = document.getElementById('down2');
 down2.style.height = '100px';
-down2.style.width= '50px';
 
 var down3 = document.getElementById('down3');
 down3.style.height = '150px';
-down3.style.width= '50px';
 
 var down4 = document.getElementById('down4');
 down4.style.height = '200px';
-down4.style.width= '50px';
-
-
-// document.addEventListener("keydown",moveUp);
-// document.addEventListener("keydown",moveDown);
 
 document.onkeydown = function(e) {
     switch (e.keyCode) {
@@ -120,7 +108,6 @@ pipe[0] = {
 function draw(){
 
     ctx.drawImage(bg,0,0);
-
 
     for(var i = 0; i < pipe.length; i++){
 
