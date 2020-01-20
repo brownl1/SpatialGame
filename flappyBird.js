@@ -62,7 +62,6 @@ down3.style.height = '150px';
 
 var down4 = document.getElementById('down4');
 down4.style.height = '200px';
-<<<<<<< HEAD
 down4.style.width= '50px';
 
 //var level1s = false;
@@ -72,8 +71,6 @@ down4.style.width= '50px';
 
 // document.addEventListener("keydown",moveUp);
 // document.addEventListener("keydown",moveDown);
-=======
->>>>>>> b32425bb94c23f1a2c4e3f04c0ce630e25c16fcd
 
 
 document.onkeydown = function(e) {
