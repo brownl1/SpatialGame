@@ -41,34 +41,28 @@ var buttonpress = 3;
 
 var up1 = document.getElementById('up1');
 up1.style.height = '50px';
-up1.style.width= '50px';
 
 var up2 = document.getElementById('up2');
 up2.style.height = '100px';
-up2.style.width= '50px';
 
 var up3 = document.getElementById('up3');
 up3.style.height = '150px';
-up3.style.width= '50px';
 
 var up4 = document.getElementById('up4');
 up4.style.height = '200px';
-up4.style.width= '50px';
 
 var down1 = document.getElementById('down1');
 down1.style.height = '50px';
-down1.style.width= '50px';
 
 var down2 = document.getElementById('down2');
 down2.style.height = '100px';
-down2.style.width= '50px';
 
 var down3 = document.getElementById('down3');
 down3.style.height = '150px';
-down3.style.width= '50px';
 
 var down4 = document.getElementById('down4');
 down4.style.height = '200px';
+<<<<<<< HEAD
 down4.style.width= '50px';
 
 //var level1s = false;
@@ -78,6 +72,8 @@ down4.style.width= '50px';
 
 // document.addEventListener("keydown",moveUp);
 // document.addEventListener("keydown",moveDown);
+=======
+>>>>>>> b32425bb94c23f1a2c4e3f04c0ce630e25c16fcd
 
 
 document.onkeydown = function(e) {
@@ -137,10 +133,6 @@ function draw(){
         if (buttonpress<0){
           alert("Too many button presses. Try again next time");
           location.reload();
-
-        if (pipe[i].x <= 10) {
-
-          }
         }
 
 
@@ -169,19 +161,11 @@ function draw(){
             });
         }
 
-        // detect collision
-
-        // if( bX + bat.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bat.height >= pipe[i].y+constant) || bY + bat.height >=  cvs.height - fg.height){
-        //     location.reload(); // reload the page
-        // }
-
         if(pipe[i].x == 5){
             score++;
             scor.play();
             buttonpress = 3;
         }
-
-
     }
 
     ctx.drawImage(fg,0,cvs.height - fg.height);
