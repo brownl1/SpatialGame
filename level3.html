@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bat Navigation Level 3</title>
+    <title>Bat Navigation</title>
+    <link rel = "stylesheet"
+       type = "text/css"
+       href = "styles.css" />
   </head>
   <body>
-   <h3>Bat Navigating Level 3</h3>
 
-   <table style="display: inline; vertical-align:top;">
-     <tr valign="bottom">
-       <th><button id="up1" onclick="moveUp(2)">^</button></th>
-       <th><button id="up2" onclick="moveUp(4)">^</button></th>
-       <th><button id="up3" onclick="moveUp(6)">^</button></th>
-       <th><button id="up4" onclick="moveUp(8)">^</button></th>
-     </tr>
-     <tr valign="top">
-       <td><button id="down1" onclick="moveDown(2)">v</button></td>
-       <td><button id="down2" onclick="moveDown(4)">v</button></td>
-       <td><button id="down3" onclick="moveDown(6)">v</button></td>
-       <td><button id="down4" onclick="moveDown(8)">v</button></td>
-     </tr>
-   </table>
-   <canvas id="canvas" width="815" height="510"></canvas>
-   <A HREF="menu.html">Go to the Home Page</A>
+   <div style="background-color: #155674; align:center; padding:10px 20px; display:inline-block”">
+     <!-- background-image: url('images/caveBackground.png'); background-repeat: no-repeat; -->
+     <!-- 0A3551 -->
+     <h3 style="color:white;">Level 1</h3>
+
+     <table style="display:inline; vertical-align:top;">
+       <tr valign="bottom">
+         <th><button id="up1" onclick="moveUp(2)" class="arrows" style="font-size: 30px;">^</button></th>
+         <th><button id="up2" onclick="moveUp(4)" class="arrows" style="font-size: 30px;">^</button></th>
+         <th><button id="up3" onclick="moveUp(6)" class="arrows" style="font-size: 30px;">^</button></th>
+         <th><button id="up4" onclick="moveUp(8)" class="arrows" style="font-size: 30px;">^</button></th>
+       </tr>
+       <tr valign="top">
+         <td><button id="down1" onclick="moveDown(2)" class="arrows" style="font-weight: bold;">v</button></td>
+         <td><button id="down2" onclick="moveDown(4)" class="arrows" style="font-weight: bold;">v</button></td>
+         <td><button id="down3" onclick="moveDown(6)" class="arrows" style="font-weight: bold;">v</button></td>
+         <td><button id="down4" onclick="moveDown(8)" class="arrows" style="font-weight: bold;">v</button></td>
+       </tr>
+     </table>
+     <canvas id="canvas" width="815" height="510" style="border-color: #20255F;"></canvas>
+     <button id="button" class="NavButton" style="display:inline; vertical-align:top;" onclick="window.location.href = 'menu.html';">Levels Menu</button>
+   </div>
 
    <script src="level3.js"></script>
   </body>
