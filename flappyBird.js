@@ -36,7 +36,7 @@ var scor = new Audio();
 fly.src = "sounds/fly.mp3";
 scor.src = "sounds/score.mp3";
 
-var buttonpress = 2
+var buttonpress = 3;
 // on key down
 
 var up1 = document.getElementById('up1');
@@ -71,9 +71,14 @@ var down4 = document.getElementById('down4');
 down4.style.height = '200px';
 down4.style.width= '50px';
 
+//var level1s = false;
+//var level2s = false;
+//var level3s = false;
+
 
 // document.addEventListener("keydown",moveUp);
 // document.addEventListener("keydown",moveDown);
+
 
 document.onkeydown = function(e) {
     switch (e.keyCode) {
@@ -122,6 +127,7 @@ function draw(){
     ctx.drawImage(bg,0,0);
 
 
+
     for(var i = 0; i < pipe.length; i++){
 
         constant = pipeNorth.height+gap;
@@ -130,7 +136,6 @@ function draw(){
 
         if (buttonpress<0){
           alert("Too many button presses. Try again next time");
-          buttonpress = 2;
           location.reload();
 
         if (pipe[i].x <= 10) {
@@ -143,7 +148,7 @@ function draw(){
         if (pipe[0].x > 150) {
           pipe[i].x-=5;
         }
-        else {
+        else{
           if( (bY <= pipe[0].y + pipeNorth.height || bY+bat.height >= pipe[0].y+constant) || bY + bat.height >=  cvs.height - fg.height){
             }
           else {
@@ -173,7 +178,7 @@ function draw(){
         if(pipe[i].x == 5){
             score++;
             scor.play();
-            buttonpress = 2;
+            buttonpress = 3;
         }
 
 

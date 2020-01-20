@@ -1,3 +1,5 @@
+import { EquirectangularReflectionMapping } from "three";
+
 var cvs = document.getElementById("canvas");
 var ctx = cvs.getContext("2d");
 
@@ -36,7 +38,7 @@ var scor = new Audio();
 fly.src = "sounds/fly.mp3";
 scor.src = "sounds/score.mp3";
 
-var buttonpress = 2
+
 // on key down
 
 var up1 = document.getElementById('up1');
@@ -72,6 +74,14 @@ down4.style.height = '200px';
 down4.style.width= '25px';
 
 
+var level1 = document.getElementById('level1');
+
+var level2 = document.getElementById('level2');
+var level3 = document.getElementById('level3');
+
+var buttonpress = 0;
+
+
 // document.addEventListener("keydown",moveUp);
 // document.addEventListener("keydown",moveDown);
 
@@ -96,13 +106,13 @@ document.onkeydown = function(e) {
 
 function moveUp(times){
     bY -= (25*times);
-    buttonpress--;
+    buttonpress --;
     fly.play();
 }
 
 function moveDown(times){
   bY += (25*times);
-  buttonpress--;
+  buttonpress --;
   fly.play();
 }
 
@@ -121,15 +131,24 @@ function draw(){
 
     ctx.drawImage(bg,0,0);
 
-
+    if(level2 == undefined && level3 == undefined){
+      var buttonpress = 2;
+      level2 = undefined;
+      level3 = undefined;
+      
+    }
+    else if(level1 == undefined && level2 == undefined){
+      var buttonpress = 1;
+      level2 = undefined;
+      level1 = undefined;
+    }
+   
     for(var i = 0; i < pipe.length; i++){
-
         constant = pipeNorth.height+gap;
         ctx.drawImage(pipeNorth,pipe[i].x,pipe[i].y);
         ctx.drawImage(pipeSouth,pipe[i].x,pipe[i].y+constant); //constant is North pipe height plus gap
-
         if (buttonpress<0){
-          alert("Too many button presses. Try again next time");
+          alert("buttonpress");
           location.reload();
 
         if (pipe[i].x <= 10) {
@@ -142,10 +161,10 @@ function draw(){
         if (pipe[0].x > 150) {
           pipe[i].x--;
         }
-        else {
+        else if (level2 != undefined){ //if it is going to hit the bat does not resume flight
           if( (bY <= pipe[0].y + pipeNorth.height || bY+bat.height >= pipe[0].y+constant) || bY + bat.height >=  cvs.height - fg.height){
             }
-          else {
+          else { //otherwise it resumes
             pipe[i].x--;
           }
         }
@@ -172,7 +191,6 @@ function draw(){
         if(pipe[i].x == 5){
             score++;
             scor.play();
-            buttonpress = 2;
         }
 
 
