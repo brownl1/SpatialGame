@@ -145,7 +145,12 @@ function draw(){
                 y : Math.floor(Math.random()*pipeNorth.height)-pipeNorth.height
         });
         }
-
+        
+        if(pipe[i].x == 5){
+            score++;
+            scor.play();
+            buttonpress = 2;
+        }
 
         // detect collision        
         if (pipe[0].x > 150) {
@@ -165,11 +170,7 @@ function draw(){
             pipe.shift();
         }
   
-        if(pipe[i].x <= 5){
-            score++;
-            scor.play();
-            buttonpress = 2;
-        }
+
 
     }
 
