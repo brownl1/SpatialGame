@@ -174,13 +174,7 @@ function draw(){
         if (pipe[i].x <= -60) {
             pipe.shift();
         }
-
-        if(pipe[i].x <= 5){
-            score++;
-            scor.play();
-            buttonpress = 2;
-            console.log(score);
-        }
+  
 
         if(score >= 10){
           won();

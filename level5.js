@@ -156,6 +156,11 @@ function draw(){
         });
         }
 
+        if(pipe[i].x == 5){
+            score++;
+            scor.play();
+            buttonpress = 2;
+        }
 
         // detect collision
         if (pipe[0].x > 150) {
@@ -175,11 +180,6 @@ function draw(){
             pipe.shift();
         }
 
-        if(pipe[i].x <= 5){
-            score++;
-            scor.play();
-            buttonpress = 2;
-        }
 
         if(score >= 10){
           won();
