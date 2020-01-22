@@ -163,6 +163,10 @@ function draw(){
             scor.play();
             buttonpress = 3;
         }
+
+        if(score >= 10){
+          alert("You won! Moving on to next level");
+        }
     }
 
     ctx.drawImage(fg,0,cvs.height - fg.height);
