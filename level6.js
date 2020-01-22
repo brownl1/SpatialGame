@@ -115,6 +115,16 @@ pipe[0] = {
     y : 0
 };
 
+function won() {
+  score = 0;
+  var txt;
+  if (confirm("You beat the game!")) {
+    location.reload();
+  } else {
+    location.reload();
+  }
+}
+
 // draw images
 
 function draw(){
@@ -147,7 +157,7 @@ function draw(){
         }
 
 
-        // detect collision        
+        // detect collision
         if (pipe[0].x > 150) {
             pipe[i].x-=2;
         }
@@ -159,16 +169,20 @@ function draw(){
             pipe[i].x-=2;
             }
         }
-        
+
 
         if (pipe[i].x <= -60) {
             pipe.shift();
         }
-  
+
         if(pipe[i].x <= 5){
             score++;
             scor.play();
             buttonpress = 2;
+        }
+
+        if(score >= 10){
+          won();
         }
 
     }

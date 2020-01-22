@@ -115,6 +115,18 @@ pipe[0] = {
     y : 0
 };
 
+
+function won() {
+  score = 0;
+  var txt;
+  if (confirm("You won! Press OK to move to next level. Press Cancel to restart this level.")) {
+    location.replace("level3.html");
+  } else {
+    location.reload();
+  }
+}
+
+
 // draw images
 
 function draw(){
@@ -191,6 +203,10 @@ function draw(){
     ctx.fillText("Score : "+score,10,cvs.height-20);
 
     requestAnimationFrame(draw);
+
+    if(score >= 10){
+      won();
+    }
 
 }
 
