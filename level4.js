@@ -132,50 +132,45 @@ function draw(){
         if (buttonpress<0){
           alert("Too many button presses. Try again next time");
           location.reload();
-
-        if (pipe[i].x <= 10) {
-
-          }
+          buttonpress = 2;
         }
 
+        pipe[i].x-=5;
 
 
-        if (pipe[0].x > 150) {
-          pipe[i].x-=5;
-        }
-        else {
-          if( (bY <= pipe[0].y + pipeNorth.height || bY+bat.height >= pipe[0].y+constant) || bY + bat.height >=  cvs.height - fg.height){
-            }
-          else {
-            pipe[i].x-=5;
-          }}
-        
-
-       if (pipe[i].x <= -60) {
-          pipe.shift();
-        }
-
-
-        if( pipe[i].x == 400 ){ //change this number to change speed of the pipes
-                                //a new one will be drawn after the current one hits this pixel amt. in the x direction
-            pipe.push({
+        if( pipe[i].x == 250 ){ //change this number to change speed of the pipes
+            //a new one will be drawn after the current one hits this pixel amt. in the x direction
+                pipe.push({
                 x : cvs.width,
                 y : Math.floor(Math.random()*pipeNorth.height)-pipeNorth.height
-            });
+        });
         }
 
-        // detect collision
 
-        // if( bX + bat.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bat.height >= pipe[i].y+constant) || bY + bat.height >=  cvs.height - fg.height){
-        //     location.reload(); // reload the page
-        // }
+        // detect collision        
+        if (pipe[0].x > 150) {
+            pipe[i].x-=2;
+        }
+        else{
+            if((bY <= pipe[0].y + pipeNorth.height || bY+bat.height >= pipe[0].y+constant) || bY + bat.height >=  cvs.height - fg.height){
+                location.reload(); // reload the page
+            }
+            else{
+            pipe[i].x-=2;
+            }
+        }
+        
 
-        if(pipe[i].x == 5){
+        if (pipe[i].x <= -60) {
+            pipe.shift();
+        }
+  
+        if(pipe[i].x <= 5){
             score++;
             scor.play();
             buttonpress = 2;
+            console.log(score);
         }
-
 
     }
 
