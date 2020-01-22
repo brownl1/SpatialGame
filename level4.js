@@ -135,8 +135,9 @@ function draw(){
           buttonpress = 2;
         }
 
-        pipe[i].x-=5;
+        pipe[i].x--;
 
+ 
 
         if( pipe[i].x == 250 ){ //change this number to change speed of the pipes
             //a new one will be drawn after the current one hits this pixel amt. in the x direction
@@ -146,12 +147,8 @@ function draw(){
         });
         }
 
-        if(pipe[i].x == 5){
-            score++;
-            scor.play();
-            buttonpress = 2;
-        }
-        
+
+
         // detect collision        
         if (pipe[0].x > 150) {
             pipe[i].x-=2;
@@ -171,7 +168,11 @@ function draw(){
         }
   
 
-
+        if(pipe[i].x == 5){
+            score++;
+            scor.play();
+            buttonpress = 2;
+        }
 
     }
 
