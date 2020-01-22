@@ -115,6 +115,16 @@ pipe[0] = {
     y : 0
 };
 
+function won() {
+  score = 0;
+  var txt;
+  if (confirm("You beat the game!")) {
+    location.reload();
+  } else {
+    location.reload();
+  }
+}
+
 // draw images
 
 function draw(){
@@ -147,19 +157,20 @@ function draw(){
         }
 
 
-        // detect collision        
+        // detect collision
         if (pipe[0].x > 150) {
             pipe[i].x-=2;
         }
         else{
             if((bY <= pipe[0].y + pipeNorth.height || bY+bat.height >= pipe[0].y+constant) || bY + bat.height >=  cvs.height - fg.height){
                 location.reload(); // reload the page
+                alert("You hit the obstacle. Try again next time");
             }
             else{
             pipe[i].x-=2;
             }
         }
-        
+
 
         if (pipe[i].x <= -60) {
             pipe.shift();
@@ -171,6 +182,9 @@ function draw(){
             buttonpress = 2;
         }
 
+        if(score >= 10){
+          won();
+        }
 
     }
 

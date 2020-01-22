@@ -115,6 +115,16 @@ pipe[0] = {
     y : 0
 };
 
+function won() {
+  score = 0;
+  var txt;
+  if (confirm("You won! Press OK to move to next level. Press Cancel to restart this level.")) {
+    location.replace("level5.html");
+  } else {
+    location.reload();
+  }
+}
+
 // draw images
 
 function draw(){
@@ -156,22 +166,25 @@ function draw(){
         else{
             if((bY <= pipe[0].y + pipeNorth.height || bY+bat.height >= pipe[0].y+constant) || bY + bat.height >=  cvs.height - fg.height){
                 location.reload(); // reload the page
+                alert("You hit the obstacle. Try again next time");
             }
             else{
             pipe[i].x-=2;
             }
         }
-        
+
 
         if (pipe[i].x <= -60) {
             pipe.shift();
         }
-  
 
         if(pipe[i].x == 5){
             score++;
             scor.play();
             buttonpress = 2;
+        }
+        if(score >= 10){
+          won();
         }
 
     }

@@ -113,6 +113,16 @@ pipe[0] = {
     y : 0
 };
 
+function won() {
+  score = 0;
+  var txt;
+  if (confirm("You won! Press OK to move to next level. Press Cancel to restart this level.")) {
+    location.replace("level2.html");
+  } else {
+    location.reload();
+  }
+}
+
 // draw images
 
 function draw(){
@@ -165,7 +175,7 @@ function draw(){
         }
 
         if(score >= 10){
-          alert("You won! Moving on to next level");
+          won();
         }
     }
 

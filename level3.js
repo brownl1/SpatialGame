@@ -115,6 +115,16 @@ pipe[0] = {
     y : 0
 };
 
+function won() {
+  score = 0;
+  var txt;
+  if (confirm("You won! Press OK to move to next level. Press Cancel to restart this level.")) {
+    location.replace("level4.html");
+  } else {
+    location.reload();
+  }
+}
+
 // draw images
 
 function draw(){
@@ -149,7 +159,7 @@ function draw(){
           else {
             pipe[i].x-=5;
           }}
-        
+
 
        if (pipe[i].x <= -60) {
           pipe.shift();
@@ -176,6 +186,9 @@ function draw(){
             buttonpress = 2;
         }
 
+        if(score >= 10){
+          won();
+        }
 
     }
 
