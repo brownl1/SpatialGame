@@ -140,6 +140,7 @@ function draw(){
         if (buttonpress<0){
           alert("Too many button presses. Try again next time");
           location.reload();
+          buttonpress = 3;
         }
 
 
