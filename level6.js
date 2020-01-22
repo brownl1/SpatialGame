@@ -145,7 +145,7 @@ function draw(){
           buttonpress = 2;
         }
 
-        pipe[i].x-=5;
+        pipe[i].x--;
 
 
         if( pipe[i].x == 250 ){ //change this number to change speed of the pipes
@@ -156,11 +156,6 @@ function draw(){
         });
         }
 
-        if(pipe[i].x == 5){
-            score++;
-            scor.play();
-            buttonpress = 2;
-        }
 
         // detect collision
         if (pipe[0].x > 150) {
@@ -179,6 +174,12 @@ function draw(){
 
         if (pipe[i].x <= -60) {
             pipe.shift();
+        }
+  
+        if(pipe[i].x == 5){
+            score++;
+            scor.play();
+            buttonpress = 2;
         }
 
         if(score >= 10){
