@@ -169,6 +169,7 @@ function draw(){
         else{
             if((bY <= pipe[0].y + pipeNorth.height || bY+bat.height >= pipe[0].y+constant) || bY + bat.height >=  cvs.height - fg.height){
                 location.reload(); // reload the page
+                alert("You hit the obstacle. Try again next time");
             }
             else{
             pipe[i].x-=2;
