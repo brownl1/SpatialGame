@@ -205,4 +205,5 @@ function draw(){
 
 }
 
+alert("Advanced Level:\n\nThe obstacles will no longer stop before they reach the bat so you must line the bat in the opening before you get hit. You can only press up to three arrows between each obstacle to find an opening.");
 draw();

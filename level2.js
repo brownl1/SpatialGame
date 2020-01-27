@@ -210,4 +210,5 @@ function draw(){
 
 }
 
+alert("How to Play:\n\nPress the arrow buttons to move up and down at different distances. Avoid the stalagtites and stalagmites.\n\nThe obstacles will stop in before they reach the bat so take your time and choose your arrows carefully. You can only press up to three arrows between each obstacle to find an opening.");
 draw();
